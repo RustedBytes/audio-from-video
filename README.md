@@ -7,7 +7,14 @@
 This program uses `ffprobe` and `ffmpeg` to do this:
 
 - `ffprobe` gets info about audio streams and used for validation;
-- `ffmpeg` gets audio stream in appropriate format.
+- `ffmpeg` gets audio stream and saves it in appropriate format.
+
+## Pre-built ffprobe/ffmpeg binaries
+
+- Linux/Windows: https://github.com/BtbN/FFmpeg-Builds/releases
+- MacOS:
+  - Intel: https://evermeet.cx/ffmpeg
+  - Apple Silicon/Intel: https://www.osxexperts.net
 
 ## Usage
 
