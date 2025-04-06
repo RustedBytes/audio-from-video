@@ -1,0 +1,8 @@
+dist/
+
+target/
+files/
+
+.DS_Store
+
+video.mp4
