@@ -1,5 +1,9 @@
 # audio-from-video
 
+[![build](https://github.com/crs-org/audio-from-video/actions/workflows/ci.yml/badge.svg)](https://github.com/crs-org/audio-from-video/actions/workflows/ci.yml)
+[![release windows x86_64](https://github.com/crs-org/audio-from-video/actions/workflows/release-win_x86_64.yml/badge.svg)](https://github.com/crs-org/audio-from-video/actions/workflows/release-win_x86_64.yml)
+[![release windows aarch64](https://github.com/crs-org/audio-from-video/actions/workflows/release-win_aarch64.yml/badge.svg)](https://github.com/crs-org/audio-from-video/actions/workflows/release-win_aarch64.yml)
+
 Copies audio from the video and saves it in a selected format
 
 Algorithm:
