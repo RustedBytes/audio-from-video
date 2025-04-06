@@ -4,13 +4,10 @@
 [![release windows x86_64](https://github.com/crs-org/audio-from-video/actions/workflows/release-win_x86_64.yml/badge.svg)](https://github.com/crs-org/audio-from-video/actions/workflows/release-win_x86_64.yml)
 [![release windows aarch64](https://github.com/crs-org/audio-from-video/actions/workflows/release-win_aarch64.yml/badge.svg)](https://github.com/crs-org/audio-from-video/actions/workflows/release-win_aarch64.yml)
 
-Copies audio from the video and saves it in a selected format
+This program uses `ffprobe` and `ffmpeg` to do this:
 
-Algorithm:
-
-- `ffprobe` gets info about audio streams
-- `ffmpeg` copies audio
-- `symphonia` loads the audio file and `hound` to wav file
+- `ffprobe` gets info about audio streams and used for validation;
+- `ffmpeg` gets audio stream in appropriate format.
 
 ## Usage
 
