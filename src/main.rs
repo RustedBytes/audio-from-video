@@ -5,9 +5,9 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, Copy, PartialEq, Eq, ValueEnum)]
 enum FormatFile {
-    WAV,
-    MP3,
-    OPUS,
+    Wav,
+    Mp3,
+    Opus,
 }
 
 #[derive(Parser, Debug)]
@@ -27,7 +27,7 @@ struct Args {
 
     /// File format
     #[arg(long)]
-    #[clap(value_enum, default_value_t = FormatFile::WAV)]
+    #[clap(value_enum, default_value_t = FormatFile::Wav)]
     format: FormatFile,
 
     /// The path to the output file
@@ -61,9 +61,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "{}.{}",
         filename.file_stem().unwrap().to_str().unwrap(),
         match args.format {
-            FormatFile::WAV => "wav",
-            FormatFile::MP3 => "mp3",
-            FormatFile::OPUS => "opus",
+            FormatFile::Wav => "wav",
+            FormatFile::Mp3 => "mp3",
+            FormatFile::Opus => "opus",
         }
     ));
 
