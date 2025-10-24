@@ -14,11 +14,17 @@ jobs:
         os: ["ubuntu-latest", "windows-latest"]
 
     steps:
+      - name: Install MUSL
+        run: sudo apt install -y musl-tools
+
       - name: Checkout code
         uses: actions/checkout@v5
       
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
+
+      - name: Add "x86_64-unknown-linux-musl" target
+        run: rustup target add x86_64-unknown-linux-musl
 
       - name: Build
         run: cargo build
