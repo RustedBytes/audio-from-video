@@ -1,0 +1,34 @@
+name: Build & Release on Tag
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install MUSL for "x86_64-unknown-linux-musl" target
+        run: sudo apt install -y musl-tools
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: stable
+      - name: Add "x86_64-unknown-linux-musl" target
+        run: rustup target add x86_64-unknown-linux-musl
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: stable
+      - name: Build release
+        run: cargo build --release
+      - name: Upload release binary as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: audio-from-video
+          path: target/x86_64-unknown-linux-musl/release/audio-from-video
+      - name: Create GitHub Release & Upload Asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: target/x86_64-unknown-linux-musl/release/audio-from-video
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
