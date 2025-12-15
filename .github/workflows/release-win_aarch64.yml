@@ -26,7 +26,7 @@ jobs:
         run: Compress-Archive -Path target/aarch64-pc-windows-msvc/release/audio-from-video.exe -DestinationPath C:\Users\runneradmin\audio-from-video_aarch64_msvc_windows.zip
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: audio-from-video_aarch64_msvc_windows.zip
           path: C:\Users\runneradmin\audio-from-video_aarch64_msvc_windows.zip
